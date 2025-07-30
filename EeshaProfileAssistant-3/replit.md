@@ -4,31 +4,7 @@
 
 This is a Flask-based web application that serves as an AI-powered CV agent for Eesha Sondhi. The application uses OpenAI's GPT-4 through Model Context Protocol (MCP) architecture to answer questions about professional background, experience, and projects using natural language processing and vector similarity search with a modern web interface.
 
-## User Preferences
 
-Preferred communication style: Simple, everyday language.
-
-## Recent Changes
-
-### July 23, 2025
-- **Project Cleanup and Enhancement**: Cleaned up codebase for deployment readiness
-  - Fixed JSON syntax errors in `repo_summaries.json` (lines 36-44)
-  - Removed unnecessary files from `attached_assets` folder and old cache files
-  - Enhanced `summarise_repo()` function to include GitHub repository links
-  - Updated system prompts to emphasize including GitHub links for specific project queries
-  - Improved project descriptions with proper formatting and feature lists
-  - Replaced redundant `list_all_repos` tool with comprehensive `get_all_projects` tool
-  - Updated cv-agent features in repo_summaries.json to reflect current MCP-based architecture
-  - Project now deployment-ready with clean file structure
-
-### July 22, 2025
-- **Code Cleanup and Simplification**: Removed unused components for cleaner codebase
-  - Deleted TTS functionality (`tts.py`) and all audio-related features
-  - Removed legacy OpenAI Assistant implementation (`agent.py`) 
-  - Cleaned up frontend to remove audio player components
-  - Removed `attached_assets` folder containing outdated code snippets
-  - Simplified Flask app responses to text-only format
-  - Updated documentation to reflect current architecture
 
 ### July 21, 2025
 - **Implemented Model Context Protocol (MCP) Architecture**: Complete transformation from direct OpenAI Assistant API to MCP-based architecture
@@ -44,10 +20,6 @@ Preferred communication style: Simple, everyday language.
   - **Proper Cleanup**: Clean server shutdown prevents zombie processes
   - **Result**: System loads in seconds instead of minutes, embeddings only regenerate when documents change
 
-### July 18, 2025
-- **Added Dedicated Butterfly Air Tool**: Created `get_butterfly_air_info()` function to provide comprehensive information about Eesha's work at Butterfly Air
-- **Improved Consistency**: Dedicated tool ensures reliable retrieval of work experience details including role, achievements, technical implementations, and business impact
-- **Enhanced Agent Configuration**: Updated system prompt to prioritize Butterfly Air tool for all company-related queries
 
 ## System Architecture
 
