@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eesha Sondhi - CV Agent</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name">Eesha Sondhi</h1>
+                        <p class="profile-subtitle">Professional CV Assistant</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Interface -->
+        <main class="chat-container">
+            <div class="chat-wrapper">
+                <div class="chat-content">
+                    <!-- Chat Messages -->
+                    <div id="chat-messages" class="messages-container">
+                        <div class="message agent-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-sparkles"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    Hello! I'm here to help you learn about Eesha Sondhi's background, experience, and projects. Feel free to ask me anything about her professional journey.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sample Questions -->
+                    <div class="suggestions-container">
+                        <div class="suggestions-grid">
+                            <button class="suggestion-card sample-question" 
+                                    data-question="What is Eesha's work experience?">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="suggestion-text">
+                                    <span class="suggestion-title">Work Experience</span>
+                                    <span class="suggestion-subtitle">Professional background and roles</span>
+                                </div>
+                            </button>
+                            
+                            <button class="suggestion-card sample-question" 
+                                    data-question="What technologies does Eesha know?">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="suggestion-text">
+                                    <span class="suggestion-title">Technical Skills</span>
+                                    <span class="suggestion-subtitle">Programming languages and tools</span>
+                                </div>
+                            </button>
+                            
+                            <button class="suggestion-card sample-question" 
+                                    data-question="Tell me about Eesha's education background">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="suggestion-text">
+                                    <span class="suggestion-title">Education</span>
+                                    <span class="suggestion-subtitle">Academic background and qualifications</span>
+                                </div>
+                            </button>
+                            
+                            <button class="suggestion-card sample-question" 
+                                    data-question="What projects has Eesha worked on?">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="suggestion-text">
+                                    <span class="suggestion-title">Projects</span>
+                                    <span class="suggestion-subtitle">Key work and personal projects</span>
+                                </div>
+                            </button>
+                            
+                            <button class="suggestion-card sample-question" 
+                                    data-question="What are Eesha's key achievements?">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="suggestion-text">
+                                    <span class="suggestion-title">Achievements</span>
+                                    <span class="suggestion-subtitle">Notable accomplishments</span>
+                                </div>
+                            </button>
+                            
+                            <button class="suggestion-card sample-question" 
+                                    data-question="What are Eesha's career interests?">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-compass"></i>
+                                </div>
+                                <div class="suggestion-text">
+                                    <span class="suggestion-title">Career Focus</span>
+                                    <span class="suggestion-subtitle">Interests and specializations</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Input Form -->
+                    <div class="input-container">
+                        <div class="input-wrapper">
+                            <input type="text" id="question-input" 
+                                   class="message-input" 
+                                   placeholder="Ask about Eesha's experience, skills, or background..." 
+                                   autocomplete="off">
+                            <button class="send-button" type="button" id="send-button">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Eesha Sondhi CV Agent. Powered by OpenAI Assistant API</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center py-4">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mb-0">Processing your question...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

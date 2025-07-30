@@ -1,0 +1,47 @@
+{
+  "cv-agent": {
+    "name": "CV Agent",
+    "description": "AI-powered resume assistant using Model Context Protocol (MCP) architecture with OpenAI GPT-4o",
+    "technologies": ["Python", "OpenAI GPT-4o", "Flask", "FAISS", "FastMCP", "Bootstrap"],
+    "features": [
+      "Natural language question answering about professional background using MCP tools",
+      "Vector similarity search with FAISS for document embedding and retrieval", 
+      "Persistent MCP server with performance-optimised caching system",
+      "Web interface with Bootstrap dark theme and responsive design",
+      "Tool-based architecture preventing AI hallucinations through proper data retrieval",
+      "Specialized tools for education, skills, projects, and work experience queries",
+      "Pre-generated embeddings with change detection for fast loading"
+    ],
+    "status": "Production Ready",
+    "github_url": false,
+    "private": false
+  },
+  "masters-ai-project": {
+    "repo_name": "butterfly-air-iaq",
+    "summary": "Integrated AI system combining NeuralProphet forecasting with a RAG-based conversational assistant to proactively manage indoor air quality for Butterfly Air.",
+    "stack": ["Python", "NeuralProphet", "LangChain", "OpenAI", "FAISS", "Flask", "PyTorch", "Pandas"],
+    "features": [
+      "12-hour forecasting for 7 IAQ parameters using NeuralProphet",
+      "Autoregression and anomaly detection for proactive air management",
+      "Multi-vector RAG assistant with temporal and semantic retrieval",
+      "Interactive web dashboard with model validation and visualizations",
+      "Conversational memory and benchmarking via WELL building standards"
+    ],
+    "github_url": "https://github.com/es1221/Masters-code",
+    "private": true
+  },
+  "n8n-pharma-project": {
+    "repo_name": "n8n-pharma-workflow",
+    "summary": "Automated workflow that scrapes unstructured pharma data, stores it in Supabase, and enables semantic search with OpenAI embeddings and pgvector—all managed in n8n.",
+    "stack": ["n8n", "Supabase", "pgvector", "OpenAI", "TypeScript", "PostgreSQL"],
+    "features": [
+      "Scrapes unstructured data from pharma company websites and converts it into structured entries stored in a Supabase table",
+      "Uses a Supabase Edge Function to embed content using OpenAI's embedding model",
+      "Stores the embeddings in a pgvector column for efficient similarity search",
+      "Allows users to submit natural-language queries via a v0 dashboard that converts queries into embeddings",
+      "Retrieves semantically similar results and sends context to OpenAI for grounded responses"
+    ],
+    "github_url": "https://github.com/es1221/n8n-pharma-workflow",
+    "private": false
+  }
+}

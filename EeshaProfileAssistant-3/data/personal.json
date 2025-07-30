@@ -1,0 +1,21 @@
+{
+  "martial_arts": {
+    "title": "Martial Arts Achievements",
+    "description": "Eesha holds a black belt in MMA and has competed at elite levels. She won the European Championships in 2019 and was selected to represent England at the World Karate Championships.",
+    "highlights": [
+      "Black belt in MMA",
+      "Winner of European Championships (2019)",
+      "Selected for the England squad at the World Karate Championships"
+    ]
+  },
+  "dance": {
+    "title": "Bhangra Dance and Leadership",
+    "description": "Eesha was part of Imperial College London’s Bhangra Dance team throughout university. In her third year, she captained and choreographed the team, leading them to perform at The Bhangra Showdown — the largest Bhangra competition outside India.",
+    "highlights": [
+      "Member of Imperial Bhangra team throughout university",
+      "Captain and lead choreographer in third year",
+      "Led team to perform on stage at The Bhangra Showdown (TBS)"
+    ]
+  }
+}
+ 
